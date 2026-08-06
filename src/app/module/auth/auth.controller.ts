@@ -5,6 +5,7 @@ import { sendResponse } from "../../utils/sendResponse";
 import type { IRequestUser } from "./auth.interface";
 import { AuthService } from "./auth.service";
 
+// register user into db by credential
 const registerPatient = catchAsync(async (req: Request, res: Response) => {
 	const payload = req.body;
 	const result = await AuthService.registerPatient(payload);
@@ -37,6 +38,7 @@ const registerPatient = catchAsync(async (req: Request, res: Response) => {
 	});
 });
 
+// login user into db with credential login
 const loginUser = catchAsync(async (req: Request, res: Response) => {
 	const payload = req.body;
 	const result = await AuthService.loginUser(payload);
@@ -66,6 +68,7 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
 	});
 });
 
+// get my profile
 const getMe = catchAsync(async (req: Request, res: Response) => {
 	const user = req.user as unknown as IRequestUser;
 
@@ -82,6 +85,7 @@ const getMe = catchAsync(async (req: Request, res: Response) => {
 	});
 });
 
+// refresh token to accessToken
 const refreshToken = catchAsync(async (req: Request, res: Response) => {
 	if (!req.cookies.refreshToken) {
 		throw new Error("Refresh token is missing");
@@ -113,9 +117,42 @@ const refreshToken = catchAsync(async (req: Request, res: Response) => {
 	});
 });
 
+// google login
+const googleLogin = catchAsync(async (req: Request, res: Response) => {
+	const payload = req.body;
+
+	const result = await AuthService.googleLogin(payload);
+
+	const { accessToken, refreshToken } = result;
+
+	res.cookie("accessToken", accessToken, {
+		httpOnly: true,
+		secure: false,
+		sameSite: "none",
+		maxAge: 1000 * 60 * 60 * 24, // 24 hour or 1 day
+	});
+	res.cookie("refreshToken", refreshToken, {
+		httpOnly: true,
+		secure: false,
+		sameSite: "none",
+		maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+	});
+
+	sendResponse(res, {
+		statusCode: httpStatus.OK,
+		success: true,
+		message: "New tokens generated successfully",
+		data: {
+			accessToken,
+			refreshToken,
+		},
+	});
+});
+
 export const AuthController = {
 	registerPatient,
 	loginUser,
 	getMe,
 	refreshToken,
+	googleLogin,
 };
