@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to HDR Health Management</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f4f7fb;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #172033;
+      }
+
+      .wrapper {
+        width: 100%;
+        padding: 45px 20px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      .header {
+        background: linear-gradient(135deg, #0f766e, #0d9488);
+        padding: 32px 35px;
+        text-align: center;
+      }
+
+      .logo {
+        display: inline-block;
+        width: 58px;
+        height: 58px;
+        line-height: 58px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 16px;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .brand {
+        margin: 14px 0 0;
+        color: #ffffff;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+      }
+
+      .content {
+        padding: 42px 40px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: #0d9488;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        color: #111827;
+        font-size: 30px;
+        line-height: 1.25;
+        letter-spacing: -0.7px;
+      }
+
+      .intro {
+        margin: 0 0 28px;
+        color: #64748b;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .feature-box {
+        background: #f0fdfa;
+        border: 1px solid #ccfbf1;
+        border-radius: 14px;
+        padding: 22px;
+        margin-bottom: 28px;
+      }
+
+      .feature-title {
+        margin: 0 0 8px;
+        color: #115e59;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .feature-text {
+        margin: 0;
+        color: #475569;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .button-wrapper {
+        text-align: center;
+        margin: 30px 0 8px;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 14px 28px;
+        background: #0d9488;
+        color: #ffffff !important;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 10px;
+      }
+
+      .closing {
+        margin: 28px 0 0;
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .footer {
+        padding: 24px 35px;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+        text-align: center;
+      }
+
+      .footer-brand {
+        margin: 0 0 7px;
+        color: #334155;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .footer-text {
+        margin: 0;
+        color: #94a3b8;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .wrapper {
+          padding: 20px 12px;
+        }
+
+        .header {
+          padding: 28px 20px;
+        }
+
+        .content {
+          padding: 32px 24px;
+        }
+
+        h1 {
+          font-size: 25px;
+        }
+
+        .footer {
+          padding: 22px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <!-- Header -->
+        <div class="header">
+          <div class="logo">H</div>
+
+          <p class="brand">HDR Health Management</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+          <p class="eyebrow">Welcome Aboard</p>
+
+          <h1>Welcome, <%= name %>!</h1>
+
+          <p class="intro">
+            We're delighted to have you with us. Your HDR Health Management
+            account has been successfully created and you're ready to get
+            started.
+          </p>
+
+          <div class="feature-box">
+            <p class="feature-title">Your healthcare, simplified.</p>
+
+            <p class="feature-text">
+              Manage appointments, connect with healthcare professionals, access
+              important health information, and keep your healthcare journey
+              organized — all from one secure platform.
+            </p>
+          </div>
+
+          <!-- CTA -->
+          <div class="button-wrapper">
+            <a href="#" class="button"> Go to Your Dashboard </a>
+          </div>
+
+          <p class="closing">
+            Thank you for choosing HDR Health Management. We're here to make
+            your healthcare experience simpler, smarter, and more connected.
+          </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          <p class="footer-brand">HDR Health Management</p>
+
+          <p class="footer-text">
+            © 2026 HDR Health Management. All rights reserved.<br />
+            This is an automated email. Please do not reply to this message.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

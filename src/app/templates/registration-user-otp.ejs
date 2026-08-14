@@ -1,0 +1,280 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify Your Email - HDR Health Management</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f4f7fb;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #172033;
+      }
+
+      .wrapper {
+        width: 100%;
+        padding: 45px 20px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(135deg, #0f766e, #0d9488);
+        padding: 32px 35px;
+        text-align: center;
+      }
+
+      .logo {
+        display: inline-block;
+        width: 58px;
+        height: 58px;
+        line-height: 58px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 16px;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .brand {
+        margin: 14px 0 0;
+        color: #ffffff;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+      }
+
+      /* Content */
+      .content {
+        padding: 42px 40px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: #0d9488;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        color: #111827;
+        font-size: 30px;
+        line-height: 1.25;
+        letter-spacing: -0.7px;
+      }
+
+      .intro {
+        margin: 0;
+        color: #64748b;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      /* OTP Section */
+      .otp-section {
+        margin: 30px 0;
+        padding: 26px 20px;
+        background: #f0fdfa;
+        border: 1px solid #ccfbf1;
+        border-radius: 14px;
+        text-align: center;
+      }
+
+      .otp-label {
+        margin: 0 0 12px;
+        color: #475569;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .otp {
+        display: inline-block;
+        padding: 15px 26px;
+        background: #ffffff;
+        border: 1px solid #99f6e4;
+        border-radius: 10px;
+        color: #0f766e;
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 9px;
+        line-height: 1;
+        box-shadow: 0 4px 12px rgba(13, 148, 136, 0.08);
+      }
+
+      .expiry {
+        margin: 14px 0 0;
+        color: #64748b;
+        font-size: 13px;
+      }
+
+      .expiry strong {
+        color: #334155;
+      }
+
+      /* Security Notice */
+      .security {
+        margin-top: 24px;
+        padding: 16px 18px;
+        background: #f8fafc;
+        border-left: 4px solid #0d9488;
+        border-radius: 8px;
+      }
+
+      .security-title {
+        margin: 0 0 5px;
+        color: #334155;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .security-text {
+        margin: 0;
+        color: #64748b;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .closing {
+        margin: 28px 0 0;
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 24px 35px;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+        text-align: center;
+      }
+
+      .footer-brand {
+        margin: 0 0 7px;
+        color: #334155;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .footer-text {
+        margin: 0;
+        color: #94a3b8;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .wrapper {
+          padding: 20px 12px;
+        }
+
+        .header {
+          padding: 28px 20px;
+        }
+
+        .content {
+          padding: 32px 24px;
+        }
+
+        h1 {
+          font-size: 25px;
+        }
+
+        .otp {
+          font-size: 25px;
+          letter-spacing: 7px;
+          padding: 14px 20px;
+        }
+
+        .footer {
+          padding: 22px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <!-- Header -->
+        <div class="header">
+          <div class="logo">H</div>
+
+          <p class="brand">HDR Health Management</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+          <p class="eyebrow">Account Security</p>
+
+          <h1>Verify Your Email</h1>
+
+          <p class="intro">
+            Hello <strong><%= name %></strong>, we received a request to verify
+            the email address <strong><%= email %></strong> for your HDR Health
+            Management account.
+          </p>
+
+          <!-- OTP -->
+          <div class="otp-section">
+            <p class="otp-label">YOUR VERIFICATION CODE</p>
+
+            <div class="otp"><%= otp %></div>
+
+            <p class="expiry">
+              This verification code will expire in
+              <strong><%= expirationMinutes %> minutes</strong>.
+            </p>
+          </div>
+
+          <!-- Security Notice -->
+          <div class="security">
+            <p class="security-title">🔒 Keep your code secure</p>
+
+            <p class="security-text">
+              Never share this verification code with anyone. HDR Health
+              Management will never ask you to provide your OTP through phone
+              calls, messages, or other channels.
+            </p>
+          </div>
+
+          <p class="closing">
+            If you didn't request this email verification, you can safely ignore
+            this message. Your account will remain secure.
+          </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          <p class="footer-brand">HDR Health Management</p>
+
+          <p class="footer-text">
+            © 2026 HDR Health Management. All rights reserved.<br />
+            This is an automated security email. Please do not reply.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+```
