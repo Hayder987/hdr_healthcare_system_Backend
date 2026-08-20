@@ -5,19 +5,18 @@ export interface ILoginUserPayload {
 	password: string;
 }
 
-
 export interface IRegisterPatientPayload {
 	name: string;
 	email: string;
 	password: string;
-	patient : {
-		contactNumber ?: string 
-	}
+	patient: {
+		contactNumber?: string;
+	};
 }
 
 export interface IVerifyEmailPayload {
 	email: string;
-	otp : string;
+	otp: string;
 }
 
 export interface IRequestUser {
@@ -28,13 +27,13 @@ export interface IRequestUser {
 }
 
 export interface IForgotPassword {
-  email: string
+	email: string;
 }
 
 export interface IResetPassword {
-  email: string;
-  otp: string;
-  newPassword: string;
+	email: string;
+	otp: string;
+	newPassword: string;
 }
 
 export interface IGoogleLoginPayload {

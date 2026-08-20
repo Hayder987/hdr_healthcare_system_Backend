@@ -1,7 +1,7 @@
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import express, {
-	NextFunction,
+	type NextFunction,
 	type Application,
 	type Request,
 	type Response,
@@ -16,7 +16,6 @@ import { authRoutes } from "./app/module/auth/auth.route";
 import { UserRoutes } from "./app/module/user/user.routes";
 import { getBkashIdToken } from "./app/lib/bkash";
 import { AppointementRoutes } from "./app/module/appointment/appointment.route";
-
 
 const app: Application = express();
 
@@ -38,27 +37,21 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", UserRoutes);
 app.use("/api/v1/appointment", AppointementRoutes);
 
-
 // test api for development
-app.get("/test", async (req: Request, res: Response, next : NextFunction) => {
-
+app.get("/test", async (req: Request, res: Response, next: NextFunction) => {
 	try {
-
 		const grantIdTokenResult = await getBkashIdToken();
-
 
 		res.status(httpStatus.OK).json({
 			success: true,
 			message: "Welcome to PH Healthcare System Backend",
-			data : grantIdTokenResult,
+			data: grantIdTokenResult,
 		});
 	} catch (error) {
 		console.log(error);
-		next(error)
+		next(error);
 	}
-})
-
-
+});
 
 // Basic route
 app.get("/", async (req: Request, res: Response) => {
